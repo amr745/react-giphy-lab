@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// import GifData from "./components/GifData";
+import {useState, useEffect} from "react";
 
 function App() {
+  const API_KEY="iNUsyQg5VuzWe4C9sjkyAjLZ0plJUgig"
+  
+  const [gifData, setGifData] = useState(null)
+  
+  const getGifData = async () => {
+    const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`)
+    const data = await response.json()
+    setGifData(data.data)
+    console.log(gifData.url)
+  }
+  
+  useEffect(() => {
+    getGifData();
+  }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <div className="App">
+    <h1>Giphy</h1>
+    {/* {gifData.map((gif, index) => {
+      return (
+        <div key={index}>
+          {gif.title}
+        </div>
+      )
+    })
+  } */}
+  </div>
+  )
 }
 
 export default App;
