@@ -1,23 +1,29 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
-// export default function Button(gif) {sw
-//     const [buttonState, setButtonState] = useState(null);
+export default function Button(props) {
+    const [buttonState, setButtonState] = useState(
+        {
+            butClick: ""
+        }
+    )
 
-//     const handleClick = (newState) => {
-//         setButtonState(newState);
-//     };
+    const handleChange = (event) => {
+        const newState = {...buttonState}
+        newState[event.target.name] = event.target.value
+        setButtonState(newState)
+    }
 
-//     const giphy = gif.map((ele, index) => {
-//         return (
-//             <img className="pic" src={ele.url} alt={ele.title} key={index} onClick={()=>handleClick(ele.url)}/>
-//         )
-//     });
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        props.getGifData(buttonState.butClick)
+    }
 
-//     return (
-//         <div className="Button">
-//             <div id="wrapper">
-//             <button onClick={() => handleClick(giphy)}>Click for Gif!</button>
-//             </div>
-//         </div>
-//     )
-// }
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="button" name="butClick" value="Get Gif" onChange={handleChange} />
+                {/* <input type="submit" value="submit" /> */}
+            </form>
+        </div>
+    )
+}
