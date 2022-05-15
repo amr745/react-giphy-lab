@@ -6,5 +6,4 @@ export default function Background() {
         <div class="bg bg3"></div>
     </div>
     )
-
 };

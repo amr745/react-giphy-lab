@@ -26,9 +26,9 @@ function App() {
   return (
   <div className="App">
     <Background />
-    <Title />
-    <Button getGifData={getGifData}/>
-    <GiphyDisplay gifData={gifData}/>
+    <Title /><br />
+    <Button getGifData={getGifData}/><br />
+    <GiphyDisplay gifData={gifData}/><br />
   </div>
   )
 }

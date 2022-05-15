@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 
-
-
 body {
   text-align: center;
   font-family: 'Koulen', cursive;
@@ -10,8 +8,15 @@ body {
 }
 
 h1 {
-  font-family: 'Koulen', cursive;
-  color: purple;
+  color: #EA4C89;;
+}
+
+h2 {
+  color: #c32aff;
+}
+
+h3 {
+  color: #EA4C89;
 }
 
 .bg {
@@ -48,10 +53,6 @@ h1 {
   transform:translate(-50%, -50%);
 }
 
-h1 {
-  font-family:monospace;
-}
-
 @keyframes slide {
   0% {
     transform:translateX(-25%);
@@ -62,20 +63,33 @@ h1 {
 }
 
 button {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  display: inline-block;
-  font-size: 1em;
-  padding: 1em 2em;
-  margin-top: 100px;
-  margin-bottom: 60px;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: button-bg;
-  color: button-text-color;
-  border-radius: 4px;
-  border: none;
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
   cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
   position: relative;
-  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
-  }
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
