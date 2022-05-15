@@ -1,3 +1,8 @@
+import "./App.css"
+import "./materialize.css"
+import "./materialize.min.css"
+import Background from "./components/Background"
+import Title from "./components/Title"
 import Button from "./components/Button";
 import GiphyDisplay from "./components/GiphyDisplay"
 import {useEffect, useState} from "react";
@@ -20,7 +25,8 @@ function App() {
   
   return (
   <div className="App">
-    <h1>Giphy</h1>
+    <Background />
+    <Title />
     <Button getGifData={getGifData}/>
     <GiphyDisplay gifData={gifData}/>
   </div>

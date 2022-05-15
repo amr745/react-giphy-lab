@@ -16,10 +16,16 @@ export default function Button(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.getGifData(buttonState.butClick)
+        setButtonState({
+            butClick: ""
+        })
     }
-
+    
     return (
-        <div>
+        <div className="container">
+            {/* <form>
+                <input type="button" onClick={handleSubmit} onChange={handleChange} value="Get Gif"/>
+            </form> */}
             <button onClick={handleSubmit} onChange={handleChange}>Get Gif</button>
         </div>
     )
