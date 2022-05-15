@@ -1,6 +1,6 @@
-// import GifData from "./components/GifData";
 import Button from "./components/Button";
-import {useState} from "react";
+import GiphyDisplay from "./components/GiphyDisplay"
+import {useEffect, useState} from "react";
 
 function App() {
   const API_KEY="iNUsyQg5VuzWe4C9sjkyAjLZ0plJUgig"
@@ -13,11 +13,16 @@ function App() {
     setGifData(data.data)
     // console.log(gifData.url)
   }
+
+  useEffect(() => {
+    getGifData();
+  }, []);
   
   return (
   <div className="App">
     <h1>Giphy</h1>
-    <Button />
+    <Button getGifData={getGifData}/>
+    <GiphyDisplay gifData={gifData}/>
   </div>
   )
 }

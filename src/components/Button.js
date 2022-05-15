@@ -20,10 +20,7 @@ export default function Button(props) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="button" name="butClick" value="Get Gif" onChange={handleChange} />
-                {/* <input type="submit" value="submit" /> */}
-            </form>
+            <button onClick={handleSubmit} onChange={handleChange}>Get Gif</button>
         </div>
     )
 }
